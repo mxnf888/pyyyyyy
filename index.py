@@ -9,8 +9,8 @@ headers = {
     "Connection": "keep-alive",
     "sec-ch-ua": '"Not/A)Brand";v="99", "Microsoft Edge";v="115", "Chromium";v="115"',
     "sec-ch-ua-mobile": "?1",
-    "Authorization": "Bearer nk-mmxww51709481",
-    "User-Agent": 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36 EdgA/115.0.1901.196',
+    "Authorization": "Bearer nk-mmxww51709481", 
+    "User-Agent": 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36 EdgA/115.0.1901.196', 
     "Content-Type": "application/json",
     "accept": "text/event-stream",
     "x-requested-with": "XMLHttpRequest",
@@ -32,7 +32,7 @@ data = {
         "content":"\nYou are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2021-09\nCurrent model: gpt-3.5-turbo-16k-0613\nCurrent time: 2023/8/29 22:07:25\n"
      },
      {
-        "role":"user",
+        "role":"user", 
         "content":"写一篇5000字的随机论文"
      }
   ],
@@ -60,9 +60,10 @@ while True:
         futures = {executor.submit(send_request) for _ in range(concurrent_requests)}
 
     for future in futures:
-        response = future.result()
-        print(response.status_code)
-        print(response.text) # 打印返回内容
+        response = future.result()  
+        console.log(response.status_code)
+         console.log(response.text)
 
     # 等待一段时间再进行下一次循环
-    time.sleep(1)
+  await new Promise(resolve => setTimeout(resolve, 1000)) 
+
